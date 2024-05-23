@@ -28,20 +28,11 @@ const Piece = sequelize.define('Piece', {
     },
     username: {
         type: DataTypes.STRING,
-        allowNull: false
-    },
-    qrLink: {
-        type: DataTypes.BLOB,
-        unique: true,
-        allowNull: false
+        defaultValue: ''
     },
     status: {
         type: DataTypes.BOOLEAN,
         defaultValue: false
-    },
-    imageData: {
-        type: DataTypes.TEXT,
-        allowNull: false
     },
     index: {
         type: DataTypes.INTEGER,
