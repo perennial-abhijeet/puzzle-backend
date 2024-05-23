@@ -6,7 +6,16 @@ const Piece = require('../models/piece');
 router.get('/', async (req, res) => {
     try {
         const pieces = await Piece.findAll();
-        res.send(pieces);
+        const modifiedPieces = pieces.map(piece => {
+            if (piece.qrLink && Buffer.isBuffer(piece.qrLink)) {
+                piece.qrLink = piece.qrLink.toString('binary');
+            }
+            return piece;
+        });
+
+
+        res.send(modifiedPieces);
+
     } catch (error) {
         res.status(500).send(error);
     }

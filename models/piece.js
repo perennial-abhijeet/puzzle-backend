@@ -31,7 +31,7 @@ const Piece = sequelize.define('Piece', {
         allowNull: false
     },
     qrLink: {
-        type: DataTypes.STRING,
+        type: DataTypes.BLOB,
         unique: true,
         allowNull: false
     },
