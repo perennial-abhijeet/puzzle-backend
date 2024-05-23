@@ -45,9 +45,9 @@ router.get('/:qrLink', async (req, res) => {
 });
 
 // Update QR link status
-router.put('/:qrLink', async (req, res) => {
+router.put('/:index', async (req, res) => {
     try {
-        const piece = await Piece.findOne({ where: { qrLink: req.params.qrLink } });
+        const piece = await Piece.findOne({ where: { index: req.params.index } });
         if (!piece) {
             return res.status(404).send({ message: 'Piece not found' });
         }
