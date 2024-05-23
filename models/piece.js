@@ -42,7 +42,11 @@ const Piece = sequelize.define('Piece', {
     imageData: {
         type: DataTypes.TEXT,
         allowNull: false
-    }
+    },
+    index: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+    },
 });
 
 module.exports = Piece;
